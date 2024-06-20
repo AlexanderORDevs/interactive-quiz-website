@@ -1,6 +1,6 @@
 <?php
 // CONEXIÓN A LA BD
-require '../SQL/conexionDB.php';
+require '../database/conexionDB.php';
 session_start();
 
 // VERIFICAR CONEXIÓN
@@ -18,11 +18,10 @@ if (isset($_POST['nombre'], $_POST['apellido'], $_POST['correo'], $_POST['dni'],
     $departamento = strtolower($_POST['departamento']);
     $edad = $_POST['edad'];
 
-    $sql = "INSERT INTO personas (nombre, apellido, usu_dni, corre_electronico, departamento, edad, puntaje)
+    $sql = "INSERT INTO participantes (nombre, apellido, dni, corre_electronico, departamento, edad, puntaje)
             VALUES ('$nombre', '$apellido', '$dni', '$correo', '$departamento', $edad, NULL)";
 
     if ($conexion->query($sql) === TRUE) {
-        echo "Registro exitoso";
         $_SESSION['last_id'] = $conexion->insert_id;
     } else {
         echo "Error al insertar datos: " . $conexion->error;
@@ -44,7 +43,7 @@ if (isset($_POST['nombre'], $_POST['apellido'], $_POST['correo'], $_POST['dni'],
     $puntaje = $_POST['puntaje'];
     $last_id = $_SESSION['last_id'];
 
-    $sql_update = "UPDATE personas SET puntaje = $puntaje WHERE id = $last_id";
+    $sql_update = "UPDATE participantes SET puntaje = $puntaje WHERE id = $last_id";
     if ($conexion->query($sql_update) === TRUE) {
         echo "Puntaje actualizado correctamente";
     } else {

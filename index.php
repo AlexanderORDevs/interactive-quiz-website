@@ -5,21 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perú En Tu Mente</title>
-    <link rel="stylesheet" href="../CSS/Index.css">
-    <link rel="stylesheet" href="../CSS/Niveles.css">
-    <link rel="stylesheet" href="../CSS/Galería.css">
+    <link rel="stylesheet" href="css/Index.css">
+    <link rel="stylesheet" href="css/Niveles.css">
+    <link rel="stylesheet" href="css/Galería.css">
 </head>
 
 <body>
     <?php
-    include 'Header.php';
+    include 'modules/header.php';
     ?>
     <!------------------- CARRUSEL- MÓVIL------------------->
     <section class="carrusel-movil">
         <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active" data-bs-interval="10000">
-                    <img src="../IMG/bannerMobile.png" class="d-block w-100" style="max-width:100%" alt="bannerMovile">
+                    <img src="assets/img/bannerMobile.png" class="d-block w-100" style="max-width:100%" alt="bannerMovile">
                 </div>
             </div>
         </div>
@@ -28,7 +28,7 @@
         <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active" data-bs-interval="10000">
-                    <img src="../IMG/bannerMain.png" style="max-width:100%" class="d-block w-100" alt="bannerMain">
+                    <img src="assets/img/bannerMain.png" style="max-width:100%" class="d-block w-100" alt="bannerMain">
                 </div>
             </div>
         </div>
@@ -215,14 +215,14 @@
                             sabes de nuestra rica cultura y fascinante historia! ¡Haz el test ahora y
                             sorpréndete!</label>
                     </div><br>
-                    <a href="../PHP/Quiz.php" class="btnQuiz">Iniciar Quiz</a>
+                    <a href="modules/quiz.php" class="btnQuiz">Iniciar Quiz</a>
                 </form>
             </div>
         </div>
     </section>
 
     <?php
-    include 'Footer.php';
+    include 'modules/footer.php';
     ?>
 </body>
 

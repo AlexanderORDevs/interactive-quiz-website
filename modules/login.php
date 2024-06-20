@@ -5,46 +5,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iniciar sesión</title>
-    <link rel="stylesheet" href="../CSS/Login.css">
+    <link rel="stylesheet" href="../css/Login.css">
 </head>
 
 <body>
     <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-        <a href="../HTML/index.html" class="volver"><i class="fa-solid fa-arrow-left"></i></a>
+        <a href="index.php" class="volver"><i class="fa-solid fa-arrow-left"></i></a>
         <h2>Iniciar sesión</h2>
         <span class="line"></span>
         <div class="info_inicio_sesion">
             <label for="correo">DNI</label>
-            <input type="text" id="inputDNI" name="usu_dni" placeholder="DNI">
+            <input type="text" id="inputDNI" name="dni" placeholder="DNI">
             <label for="contraseña">Contraseña</label>
-            <input type="password" id="inputContraseña" name="usu_contra" placeholder="Contraseña">
+            <input type="password" id="inputContraseña" name="password" placeholder="Contraseña">
             <?php
-            require '../SQL/conexionDB.php';
+            require '../database/conexionDB.php';
             session_start();
 
             if ($_POST) {
-                $usu_dni = $_POST['usu_dni'];
-                $usu_contra = $_POST['usu_contra'];
+                $dni = $_POST['dni'];
+                $password = $_POST['password'];
 
-                $sql = "SELECT usu_dni, usu_nombrecom, usu_contra FROM usuarios WHERE usu_dni='$usu_dni'";
+                $sql = "SELECT dni, full_name, password FROM usuarios WHERE dni='$dni'";
                 $resultado = $conexion->query($sql);
                 $num = $resultado->num_rows;
 
                 if ($num > 0) {
 
                     $row = $resultado->fetch_assoc();
-                    $password_bd = $row['usu_contra'];
+                    $password_bd = $row['password'];
 
-                    $pass_c = $usu_contra;
+                    $pass_c = $password;
 
                     if ($password_bd == $pass_c) {
 
-                        $_SESSION['usu_dni'] = $row['usu_dni'];
-                        $_SESSION['usu_nombrecom'] = $row['usu_nombrecom'];
-                        $_SESSION['usu_contra'] = $row['usu_contra'];
+                        $_SESSION['dni'] = $row['dni'];
+                        $_SESSION['full_name'] = $row['full_name'];
+                        $_SESSION['password'] = $row['password'];
 
                         echo '<script type="text/javascript">';
-                        echo 'window.location.href = "../DASHBOARD/index.php";';
+                        echo 'window.location.href = "../modules/colaboradores.php";';
                         echo '</script>';
 
                     } else {

@@ -49,7 +49,7 @@ $(document).ready(function () {
 
         // Enviar datos al servidor mediante AJAX
         $.ajax({
-            url: '../PHP/formulario.php',
+            url: '../php/formulario.php',
             type: 'POST',
             data: {
                 nombre,
@@ -61,7 +61,6 @@ $(document).ready(function () {
                 num
             },
             success: function (response) {
-                console.log("response---",response)
                 questions = JSON.parse(response);
                 console.log("questions---",questions)
                 if (questions.length > 0) {
@@ -69,7 +68,7 @@ $(document).ready(function () {
                     $('.quiz').removeClass('hide');
                     setTimeout(startQuiz, 100);
                 } else {
-                    alert('No se encontraron registros en la tabla personas.');
+                    alert('No se encontraron registros en la tabla participantes.');
                 }
             },
             error: function (xhr, status, error) {
@@ -157,7 +156,7 @@ const showQuestion = (question) => {
 const startTimer = (time) => {
     timer = setInterval(() => {
         if (time === 3) {
-            playAdudio("countdown.mp3");
+            playAdudio("../assets/media/countdown.mp3");
         }
         if (time >= 0) {
             progress(time);
@@ -243,7 +242,7 @@ const showScore = () => {
     quiz.classList.add("hide");
 
     $.ajax({
-        url: '../PHP/formulario.php',
+        url: '../php/formulario.php',
         type: 'POST',
         data: {
             puntaje: score
