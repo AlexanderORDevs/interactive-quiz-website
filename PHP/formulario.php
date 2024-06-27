@@ -13,7 +13,7 @@ if (isset($_POST['nombre'], $_POST['apellido'], $_POST['correo'], $_POST['dni'],
 
     $nombre = strtolower($_POST['nombre']);
     $apellido = strtolower($_POST['apellido']);
-    $correo = strtolower($_POST['correo']);
+    $correo = $_POST['correo'];
     $dni = $_POST['dni'];
     $departamento = strtolower($_POST['departamento']);
     $edad = $_POST['edad'];

@@ -8,8 +8,8 @@
     <title>Administración</title>
     <link href="../css/portal.css" rel="stylesheet" />
     <link href="../css/colaborador.css" rel="stylesheet" />
-    <!-- <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script> -->
     <script src="../js/colaborador.js" defer></script>
+    <script src="../js/helpers/jquery-3.7.1.min.js"></script>
 </head>
 
 <body class="sb-nav-fixed">
@@ -50,8 +50,8 @@
                     </div>
                 </div>
                 <div class="sb-sidenav-footer">
-                    <div class="small">Logged in as:</div>
-                    Start Bootstrap
+                    <div class="small">Usuario:</div>
+                    alex
                 </div>
             </nav>
         </div>
@@ -59,21 +59,37 @@
             <main>
                 <div class="container-fluid px-4">
                     <h1 class="mt-4">Agregar Trabajador</h1><br>
-                    <div>
-                        <form id="colabForm" method="POST">
-                            <label for="nombre">Nombres Completos:</label>
-                            <input class="" type="text" id="nombre" name="nombre" maxlength="20"
-                                pattern="[A-Za-z\s]{1,20}" title="Solo se permiten letras y un máximo de 20 caracteres"
-                                required>
-                            <label for="dni">Número de DNI:</label>
-                            <input class="" type="text" id="dni" name="dni" pattern="\d{8}"
-                                title="Debe contener exactamente 8 dígitos" required>
-                            <label for="correo">Correo Electrónico:</label>
-                            <input class="" type="email" id="correo" name="correo"
-                                title="Debe ser un correo de @gmail.com" required>
-                            <label for="edad">Edad:</label>
-                            <input class="" type="number" id="edad" name="edad" min="5" max="100" required>
-                            <button type="submit" id="startQuizBtn" class="btn start">Comenzar Quiz</button>
+                    <div class="formulario">
+                        <form class="register" id="addColaborador" method="POST">
+                            <div class="form-container">
+                                <div class="form-column">
+                                    <div class="form-group">
+                                        <label for="fullname">Nombres Completos:</label>
+                                        <input type="text" id="fullname" name="fullname" maxlength="20"
+                                            pattern="[A-Za-z\s]{1,20}"
+                                            title="Solo se permiten letras y un máximo de 20 caracteres" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="dni">Número de DNI:</label>
+                                        <input type="text" id="dni" name="dni" pattern="\d{8}"
+                                            title="Debe contener exactamente 8 dígitos" required>
+                                    </div>
+                                </div>
+                                <div class="form-column">
+                                    <div class="form-group">
+                                        <label for="password">Contraseña:</label>
+                                        <input type="password" id="password" name="password" maxlength="20" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="correo">Correo Electrónico:</label>
+                                        <input type="email" id="correo" name="correo"
+                                            title="Debe ser un correo de @gmail.com" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-button">
+                                <button type="submit" id="sendColab">Agregar Colaborador</button>
+                            </div>
                         </form><br>
                     </div>
                     <div class="card mb-4">
@@ -81,8 +97,8 @@
                             <i class="fas fa-table me-1"></i>
                             Listado
                         </div>
-                        <div >
-                        <?php include("../php/colaborador.php");?>
+                        <div>
+                            <?php include ("../php/tables.php"); ?>
                         </div>
                     </div>
                 </div>
@@ -90,12 +106,7 @@
             <footer class="py-4 bg-light mt-auto">
                 <div class="container-fluid px-4">
                     <div class="d-flex align-items-center justify-content-between small">
-                        <div class="text-muted">Copyright &copy; Your Website 2023</div>
-                        <div>
-                            <a href="#">Privacy Policy</a>
-                            &middot;
-                            <a href="#">Terms &amp; Conditions</a>
-                        </div>
+                        <div class="text-muted">Copyright &copy; MINEDU 2024</div>
                     </div>
                 </div>
             </footer>

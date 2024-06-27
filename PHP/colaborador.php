@@ -7,45 +7,22 @@ if ($conexion->connect_error) {
     die("Error de conexión: " . $conexion->connect_error);
 }
 
-$sql = "SELECT * FROM usuarios WHERE usuarios.status = 1;";
-$getcolab = mysqli_query($conexion, $sql);
+if (isset($_POST['fullname'], $_POST['dni'], $_POST['password'], $_POST['correo'])) {
 
-if ($getcolab) {
-    echo '<table id="datatablesSimple">';
-    echo '<tr class="header">';
-    echo '<th>Nombres Completos</th>';
-    echo '<th>DNI</th>';
-    echo '<th>Correo Electrónico</th>';
-    echo '<th>Contraseña</th>';
-    echo '<th>Acciones</th>'; // Nueva columna
-    echo '</tr>';
+    $fullname = strtolower($_POST['fullname']);
+    $dni = $_POST['dni'];
+    $password = $_POST['password'];
+    $correo = $_POST['correo'];
+    $status = 1;
 
-    while ($row = $getcolab->fetch_array()) {
-        echo '<tr>';
-        echo '<td>' . htmlspecialchars($row['full_name']) . '</td>';
-        echo '<td>' . htmlspecialchars($row['dni']) . '</td>';
-        echo '<td>' . htmlspecialchars($row['email']) . '</td>';
-        echo '<td>' . htmlspecialchars($row['password']) . '</td>';
-        echo '<td><a href="#" onclick="desactivarUsuario(\'' . htmlspecialchars($row['dni']) . '\')"><img src="https://cdn-icons-png.flaticon.com/512/323/323811.png" alt="Eliminar" width="40" height="40"></a></td>'; 
-        echo '</tr>';
-    }
+    $sql = "INSERT INTO colaboradores (`full_name`, `dni`, `password`, `email`, `status`)
+            VALUES ('$fullname', '$dni', '$password', '$correo', '$status')";
 
-    echo '</table>';
-} else {
-    echo "No se encontraron registros.";
+    if ($conexion->query($sql) === FALSE) {
+        echo "Error al insertar datos: " . $conexion->error;
+    } 
 }
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $dni = $conexion->real_escape_string($_POST['dni']);
-
-    // Actualizar el estado del usuario
-    $sql = "UPDATE usuarios SET status = 0 WHERE dni = '$dni'";
-    if ($conexion->query($sql) === TRUE) {
-        echo "Usuario desactivado con éxito.";
-    } else {
-        echo "Error al desactivar el usuario: " . $conexion->error;
-    }
-}
 
 // CERRAR CONEXIÓN
 $conexion->close();

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-06-2024 a las 18:51:21
+-- Tiempo de generación: 21-06-2024 a las 00:36:56
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -20,6 +20,30 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `quizculturageneral`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `colaboradores`
+--
+
+CREATE TABLE `colaboradores` (
+  `id` int(100) NOT NULL,
+  `full_name` varchar(100) DEFAULT NULL,
+  `dni` int(8) DEFAULT NULL,
+  `password` varchar(60) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `status` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `colaboradores`
+--
+
+INSERT INTO `colaboradores` (`id`, `full_name`, `dni`, `password`, `email`, `status`) VALUES
+(3, 'Xiomara Tipte', 55476522, '123456789', 'example@gmail.com', 1),
+(4, 'Alex Oyolo', 123, '123', 'example2@gmail.com', 1),
+(5, 'test', 87654765, 'qwert', 'example3@gmail.com', 0);
 
 -- --------------------------------------------------------
 
@@ -45,7 +69,9 @@ CREATE TABLE `participantes` (
 
 INSERT INTO `participantes` (`id`, `nombre`, `apellido`, `dni`, `corre_electronico`, `departamento`, `edad`, `puntaje`, `fecha_creacion`) VALUES
 (43, 'alex', 'oyolo', 43256743, 'arau.jo7672@gmail.com', 'lima', 69, NULL, '2024-05-23 04:39:42'),
-(46, 'alex', 'oyolo', 43256743, 'arau.jo7672@gmail.com', 'lima', 72, 1, '2024-05-23 04:50:29');
+(46, 'alex', 'oyolo', 43256743, 'arau.jo7672@gmail.com', 'lima', 72, 1, '2024-05-23 04:50:29'),
+(49, 'alex', 'oyolo', 34567892, 'tre@gmail.com', 'lima', 23, NULL, '2024-06-20 17:52:47'),
+(50, 'alex', 'oyolo', 21345678, 'ret@gmail.com', 'lima', 43, NULL, '2024-06-20 20:16:28');
 
 -- --------------------------------------------------------
 
@@ -120,31 +146,15 @@ INSERT INTO `preguntas` (`id`, `pregunta`, `respuesta_correcta`, `respuestas_inc
 (51, '¿Qué tenista peruano alcanzó el puesto número 5 del ranking mundial ATP en 1977?', 'Alejandro Olmedo', '[\"Luis Horna\",\"Jaime Yzaga\",\"Guillermo Vilas\" ]', 'Deporte', 'dificil', '2024-05-31'),
 (52, '¿Quién es el único tetracampeón del fútbol peruano? ', 'Alianza Lima ', '[\"Cienciano\",\"Sporting Cristal\",\"Universitario de deportes\" ]', 'Deportes', 'medio', '2024-05-31');
 
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `usuarios`
---
-
-CREATE TABLE `usuarios` (
-  `id` int(100) NOT NULL,
-  `full_name` varchar(100) DEFAULT NULL,
-  `dni` int(8) DEFAULT NULL,
-  `password` varchar(60) DEFAULT NULL,
-  `email` varchar(100) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `usuarios`
---
-
-INSERT INTO `usuarios` (`id`, `full_name`, `dni`, `password`, `email`) VALUES
-(3, 'Xiomara Tipte', 74185296, '123456789', 'example@gmail.com'),
-(4, 'Alex Oyolo', 123, '123', 'example2@gmail.com');
-
 --
 -- Índices para tablas volcadas
 --
+
+--
+-- Indices de la tabla `colaboradores`
+--
+ALTER TABLE `colaboradores`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indices de la tabla `participantes`
@@ -159,32 +169,26 @@ ALTER TABLE `preguntas`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `usuarios`
---
-ALTER TABLE `usuarios`
-  ADD PRIMARY KEY (`id`);
-
---
 -- AUTO_INCREMENT de las tablas volcadas
 --
+
+--
+-- AUTO_INCREMENT de la tabla `colaboradores`
+--
+ALTER TABLE `colaboradores`
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `participantes`
 --
 ALTER TABLE `participantes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
 -- AUTO_INCREMENT de la tabla `preguntas`
 --
 ALTER TABLE `preguntas`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
-
---
--- AUTO_INCREMENT de la tabla `usuarios`
---
-ALTER TABLE `usuarios`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

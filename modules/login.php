@@ -26,7 +26,7 @@
                 $dni = $_POST['dni'];
                 $password = $_POST['password'];
 
-                $sql = "SELECT dni, full_name, password FROM usuarios WHERE dni='$dni'";
+                $sql = "SELECT dni, full_name, password FROM colaboradores WHERE dni='$dni'";
                 $resultado = $conexion->query($sql);
                 $num = $resultado->num_rows;
 

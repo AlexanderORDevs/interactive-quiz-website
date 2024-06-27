@@ -1,18 +1,32 @@
 
+$(document).ready(function () {
+    $('#addColaborador').submit(function (event) {
+        event.preventDefault(); // Prevenir el comportamiento predeterminado del formulario
 
+        let fullname = $('#fullname').val().toLowerCase();
+        let dni = $('#dni').val();
+        let correo = $('#correo').val().toLowerCase();
+        let password = $('#password').val();
 
-function desactivarUsuario(dni) {
-    if (confirm('¿Estás seguro de que deseas desactivar este usuario?')) {
-        var xhr = new XMLHttpRequest();
-        xhr.open("POST", "../php/colaborador.php", true);
-        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-        xhr.onreadystatechange = function() {
-            if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-                alert(xhr.responseText);
-                // Recargar la página o eliminar la fila
+        // Enviar datos al servidor mediante AJAX
+        $.ajax({
+            url: '../php/colaborador.php',
+            type: 'POST',
+            data: {
+                fullname,
+                dni,
+                password, 
+                correo,
+            },
+            success: function () {
+                alert("Cliente Agregado")
                 location.reload();
+            },
+            error: function (xhr, status, error) {
+                console.error(xhr.responseText);
             }
-        };
-        xhr.send("dni=" + encodeURIComponent(dni));
-    }
-}
+        });
+    });
+});
+
+
