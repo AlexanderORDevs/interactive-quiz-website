@@ -7,8 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <title>Administración</title>
     <link href="../css/portal.css" rel="stylesheet" />
-    <link href="../css/colaborador.css" rel="stylesheet" />
-    <script src="../js/colaborador.js" defer></script>
+    <link href="../css/participante.css" rel="stylesheet" />
     <script src="../js/helpers/jquery-3.7.1.min.js"></script>
 </head>
 
@@ -34,7 +33,7 @@
                 <div class="sb-sidenav-menu">
                     <div class="nav">
                         <div class="sb-sidenav-menu-heading">Sector Laboral</div>
-                        <a class="nav-link" href="../modules/colaboradores.php">
+                        <a class="nav-link" href="../modules/colaboradores.php"">
                             <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                             Trabajadores
                         </a>
@@ -58,47 +57,12 @@
         <div id="layoutSidenav_content">
             <main>
                 <div class="container-fluid px-4">
-                    <h1 class="mt-4">Agregar Trabajador</h1><br>
-                    <div class="formulario">
-                        <form class="register" id="addColaborador" method="POST">
-                            <div class="form-container">
-                                <div class="form-column">
-                                    <div class="form-group">
-                                        <label for="fullname">Nombres Completos:</label>
-                                        <input type="text" id="fullname" name="fullname" maxlength="20"
-                                            pattern="[A-Za-z\s]{1,20}"
-                                            title="Solo se permiten letras y un máximo de 20 caracteres" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="dni">Número de DNI:</label>
-                                        <input type="text" id="dni" name="dni" pattern="\d{8}"
-                                            title="Debe contener exactamente 8 dígitos" required>
-                                    </div>
-                                </div>
-                                <div class="form-column">
-                                    <div class="form-group">
-                                        <label for="password">Contraseña:</label>
-                                        <input type="password" id="password" name="password" maxlength="20" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="correo">Correo Electrónico:</label>
-                                        <input type="email" id="correo" name="correo"
-                                            title="Debe ser un correo de @gmail.com" required>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-button">
-                                <button type="submit" id="sendColab">Agregar Colaborador</button>
-                            </div>
-                        </form><br>
-                    </div>
+                    <h1 class="mt-4">Lista De Participantes</h1><br>
                     <div class="card mb-4">
                         <div class="card-header">
-                            <i class="fas fa-table me-1"></i>
-                            Listado
                         </div>
                         <div>
-                            <?php include ("../php/tables.php"); ?>
+                            <?php include ("../php/participante.php"); ?>
                         </div>
                     </div>
                 </div>

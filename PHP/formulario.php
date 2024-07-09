@@ -18,14 +18,14 @@ if (isset($_POST['nombre'], $_POST['apellido'], $_POST['correo'], $_POST['dni'],
     $departamento = strtolower($_POST['departamento']);
     $edad = $_POST['edad'];
 
-    $sql = "INSERT INTO participantes (nombre, apellido, dni, corre_electronico, departamento, edad, puntaje)
-            VALUES ('$nombre', '$apellido', '$dni', '$correo', '$departamento', $edad, NULL)";
+    // $sql = "INSERT INTO participantes (nombre, apellido, dni, corre_electronico, departamento, edad, puntaje)
+    //         VALUES ('$nombre', '$apellido', '$dni', '$correo', '$departamento', $edad, NULL)";
 
-    if ($conexion->query($sql) === TRUE) {
-        $_SESSION['last_id'] = $conexion->insert_id;
-    } else {
-        echo "Error al insertar datos: " . $conexion->error;
-    }
+    // if ($conexion->query($sql) === TRUE) {
+    //     $_SESSION['last_id'] = $conexion->insert_id;
+    // } else {
+    //     echo "Error al insertar datos: " . $conexion->error;
+    // }
 
     $cantidad = $_POST['num'];
     $queryQuestions = "SELECT * FROM preguntas ORDER BY RAND() LIMIT $cantidad;";

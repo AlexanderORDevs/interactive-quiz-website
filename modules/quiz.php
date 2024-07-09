@@ -84,8 +84,10 @@
         <div>
           <span class="final-score">0</span>
           <span class="total-score">/10</span>
+
         </div>
       </div>
+      <a href="../modules/material.php" class="btnMaterial">Necesitas Reforzar?</a>
       <button class="btn restart">Empezar Nuevamente</button>
     </div>
   </div>
