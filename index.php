@@ -78,7 +78,7 @@
                 </div>
             </div>
             <div class="card-obj">
-                <img src="https://seeklogo.com/images/E/escudo-nacional-del-peru-logo-8CA1DC108F-seeklogo.com.png"
+                <img src="https://st5.depositphotos.com/1292719/66133/i/450/depositphotos_661334094-stock-photo-autumn-cartoon-doodles-illustration-fall.jpg"
                     alt="image4">
                 <div class="card-content">
                     <h3> Despertar el interés y la conexión emocional con la cultura peruana</h3>
@@ -106,7 +106,7 @@
         <div class="container-niveles">
             <div class="hexagon">
                 <div class="shape">
-                    <img src="https://png.pngtree.com/png-clipart/20231230/original/pngtree-illustration-of-sprouting-seeds-vector-png-image_13975569.png"
+                    <img src="https://static.vecteezy.com/system/resources/previews/014/307/354/non_2x/thin-tree-trunk-icon-cartoon-style-vector.jpg"
                         alt="image5">
                     <div class="content">
                         <div>
@@ -120,7 +120,7 @@
             </div>
             <div class="hexagon">
                 <div class="shape">
-                    <img src="https://png.pngtree.com/png-clipart/20230419/original/pngtree-tree-cartoon-png-image_9067545.png"
+                    <img src="https://thumbs.dreamstime.com/b/dibujo-animado-%C3%A1rbol-verde-aislado-sobre-fondo-blanco-ilustraci%C3%B3n-de-planta-s%C3%ADmbolo-ecol%C3%B3gico-214183581.jpg"
                         alt="image6">
                     <div class="content">
                         <div>
@@ -149,7 +149,7 @@
     </section>
     <!---------------------Galería de Imagenes ------------------------->
     <section class="section-servicios-vp">
-        <h1>Galería de Imagenes</h1>
+        <h1>Galería de Imágenes</h1>
         <div class="container-serv">
             <div class="hexagon">
                 <div class="shape">

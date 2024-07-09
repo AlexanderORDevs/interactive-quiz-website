@@ -8165,7 +8165,7 @@ textarea.form-control-lg {
 
 .bg-dark {
   --bs-bg-opacity: 1;
-  background-color: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity)) !important;
+  background:orange;
 }
 
 .bg-black {
@@ -9440,7 +9440,8 @@ body {
   flex-wrap: nowrap;
 }
 .sb-sidenav .sb-sidenav-menu .nav .sb-sidenav-menu-heading {
-  padding: 1.75rem 1rem 0.75rem;
+  color:white;
+  padding: 1.75rem 1rem 0.85rem;
   font-size: 0.75rem;
   font-weight: bold;
   text-transform: uppercase;
@@ -9473,7 +9474,7 @@ body {
 }
 
 .sb-sidenav-dark {
-  background-color: #212529;
+  background:orange;
   color: rgba(255, 255, 255, 0.5);
 }
 .sb-sidenav-dark .sb-sidenav-menu .sb-sidenav-menu-heading {
@@ -9490,6 +9491,10 @@ body {
 }
 .sb-sidenav-dark .sb-sidenav-menu .nav-link:hover {
   color: #fff;
+  text-shadow: -1px -1px 0 black,
+  1px -1px 0 black,
+  -1px 1px 0 black,
+  1px 1px 0 black;
 }
 .sb-sidenav-dark .sb-sidenav-menu .nav-link.active {
   color: #fff;
@@ -9498,7 +9503,7 @@ body {
   color: #fff;
 }
 .sb-sidenav-dark .sb-sidenav-footer {
-  background-color: #343a40;
+  background-color: darkorange;
 }
 
 .sb-sidenav-light {

@@ -10,7 +10,7 @@
 .footer {
     font-family: 'Poppins';
     font-weight: 400;
-    background: url(https://besthqwallpapers.com/Uploads/14-12-2019/115900/thumb2-background-with-flowers-black-damask-pattern-vintage-floral-pattern-black-vintage-background-floral-patterns.jpg);
+    background: url(https://img.freepik.com/vector-premium/fondo-negro-formas-coloridas-palabra-el_811396-1323.jpg);
     padding: 40px 0;
 }
 
@@ -43,5 +43,10 @@
     margin-top: 35px;
     text-align: center;
     font-size: 13px;
-    color: rgb(151, 148, 148);
+    color: #a2aace;
+    font-weight: bold;
+    text-shadow: -1px -1px 0 black,
+      1px -1px 0 black,
+      -1px 1px 0 black,
+      1px 1px 0 black;
 }

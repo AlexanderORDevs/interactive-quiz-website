@@ -11,43 +11,63 @@
   <script defer src="../js/quiz.js"></script>
   <title>Quiz App</title>
 </head>
-
 <body>
   <div class="container">
     <div class="start-screen">
       <h1 class="heading">Quiz App</h1>
-      <div class="settings">
-        <form id="quizForm" method="POST">
-          <label for="nombre">Nombre:</label>
-          <input class="labelText" type="text" id="nombre" name="nombre" maxlength="20" pattern="[A-Za-z\s]{1,20}"
-            title="Solo se permiten letras y un máximo de 20 caracteres" required>
-
-          <label for="apellido">Apellido:</label>
-          <input class="labelText" type="text" id="apellido" name="apellido" maxlength="20" pattern="[A-Za-z\s]{1,20}"
-            title="Solo se permiten letras y un máximo de 20 caracteres" required>
-
-          <label for="correo">Correo Electrónico:</label>
-          <input class="labelText" type="email" id="correo" name="correo" title="Debe ser un correo de @gmail.com"
-            required>
-
-          <label for="dni">Número de DNI:</label>
-          <input class="labelText" type="text" id="dni" name="dni" pattern="\d{8}"
-            title="Debe contener exactamente 8 dígitos" required>
-
-          <label for="departamento">Departamento:</label>
-          <input class="labelText" type="text" id="departamento" name="departamento" maxlength="20"
-            pattern="[A-Za-z\s]{1,20}" title="Solo se permiten letras y un máximo de 20 caracteres" required>
-
-          <label for="edad">Edad:</label>
-          <input class="labelText" type="number" id="edad" name="edad" min="5" max="100" required>
-          <label for="num-questions">Números de Preguntas:</label>
-          <select class="labelText" id="num-questions">
-            <option value="2">2</option>
-            <option value="5">5</option>
-            <option value="10">10</option>
-            <option value="15">15</option>
-            <option value="20">20</option>
-          </select>
+      <div>
+        <form class="register" id="quizForm" method="POST">
+          <div class="form-container">
+            <div class="form-column">
+              <div class="form-group">
+                <label for="nombre">Nombres:</label>
+                <input type="text" id="nombre" name="nombre" maxlength="20" pattern="[A-Za-z\s]{1,20}"
+                  title="Solo se permiten letras y un máximo de 20 caracteres" required>
+              </div>
+              <div class="form-group">
+                <label for="apellido">Apellidos:</label>
+                <input type="text" id="apellido" name="apellido" maxlength="20" pattern="[A-Za-z\s]{1,20}"
+                  title="Solo se permiten letras y un máximo de 20 caracteres" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="correo">Correo Electrónico:</label>
+                <input type="email" id="correo" name="correo" title="Debe ser un correo de @gmail.com" required>
+              </div>
+            </div>
+            <div class="form-column">
+              <div class="form-group">
+                <label for="dni">Número de DNI:</label>
+                <input type="text" id="dni" name="dni" pattern="\d{8}" title="Debe contener exactamente 8 dígitos"
+                  required>
+              </div>
+              <div class="form-group">
+                <label for="departamento">Departamento:</label>
+                <input type="text" id="departamento" name="departamento" maxlength="20" pattern="[A-Za-z\s]{1,20}"
+                  title="Solo se permiten letras y un máximo de 20 caracteres" required>
+              </div>
+              <div class="form-group">
+                <label for="edad">Edad:</label>
+                <input type="number" id="edad" name="edad" min="5" max="100" required>
+              </div>
+            </div>
+            <div class="form-column">
+              <div class="form-group">
+                <label for="password">Contraseña:</label>
+                <input type="password" id="password" name="password" maxlength="20" required>
+              </div>
+              <div class="form-group">
+                <label for="num-questions">Números de Preguntas:</label>
+                <select class="labelText" id="num-questions">
+                  <option value="2">2</option>
+                  <option value="5">5</option>
+                  <option value="10">10</option>
+                  <option value="15">15</option>
+                  <option value="20">20</option>
+                </select>
+              </div>
+            </div>
+          </div>
           <button type="submit" id="startQuizBtn" class="btn start">Comenzar Quiz</button>
         </form>
       </div>
@@ -87,7 +107,7 @@
 
         </div>
       </div>
-      <a href="../modules/material.php" class="btnMaterial">Necesitas Reforzar?</a>
+      <a href="../modules/materiales.php" class="btnMaterial">Necesitas Reforzar?</a>
       <button class="btn restart">Empezar Nuevamente</button>
     </div>
   </div>
